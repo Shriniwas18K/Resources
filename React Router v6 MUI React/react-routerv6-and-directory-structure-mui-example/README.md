@@ -1,0 +1,1 @@
+This repository is for only learning routing distributed and centralized in react app.It follows scalable directory structure.This file shows various react router v6 features used but imports are not resolved due to changes later.It uses mui for building components.

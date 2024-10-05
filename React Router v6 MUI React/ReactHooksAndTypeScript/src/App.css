@@ -1,0 +1,6 @@
+/* The files with simply .css mix thier css with global index.css */
+/* So do not write nor maintain these files
+
+Write css in js, they affect thier css to that component itself
+and wherever that component is imported, and its children components
+and thus not mix with global css*/
