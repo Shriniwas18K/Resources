@@ -1,0 +1,7 @@
+layout components are components in react whose purpose is
+to arrange components in rendered in on screen
+
+for example commonly used are
+1] split screen
+2] lists and items
+3] modals (dialog boxes)
