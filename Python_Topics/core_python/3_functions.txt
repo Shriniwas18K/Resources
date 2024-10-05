@@ -1,0 +1,217 @@
+now as functions are "first class objects" in world, i.e. they can be passed to functions and 
+assigned to variables. 
+functions are callable things because they are instances of most basic object class
+the building block of python. The object class contains __call__(self) method in it.
+Anything that contains __call__(self) can be called like function.
+we can check whter anything is callable i.e.its instance of class having contains __call__() method
+>>> class B:
+...     def __call__(self):
+...             print('calling B')
+...
+>>> B()
+<__main__.B object at 0x000001B41EFA4620>
+>>> b=B()
+>>> b()
+calling B
+>>>callable(b)
+True
+
+python is purely instance oriented language. functions are also instances of some class
+This is actually explained as in python as functions are just syntactic sugars over above approach.
+
+>>> def funcname(args): pass
+actually means
+>>>class funcname(object):
+	def __call__(self,args):
+		pass
+
+here object is the building block class object of python language
+
+But instances of function class designed in language for being callable and have less memory footprint and
+they have internally a variable storing additional data about themself termed as __dict__.
+So we should noty use class kind of syntax because people dont know and confuse with actual classes.
+_____________________________________________________________________________________
+syntax to define a function:
+
+def funcname( ......... , /  , .............. , * , .............) -> returnType :
+	             ^               ^                  ^
+	             |               |                  |
+	         purely       called            called purely
+	       positional   as both          keyword in
+	          args         positional      function call
+                                           and keyword
+                                           in function call
+
+	''' first line is always documentation of function'''
+
+now these functions are stored as instances/objects in python so
+as variables can refer/point to any object hence we can assign
+functions to variables
+
+f=funcname
+
+f(1234,35446) is also valid and actual funcname gets called here.
+
+
+Suppose we know only positional arguements will be used in function
+	def add(a,b):
+                		return a+b
+then we specify only the variables , that are used in function body
+
+Suppose we know that our function can take any arbitary number
+of positional arguements.Then we use below kind of approach
+	def add(*args):
+		res=0
+		for arg in args:
+			res+=arg
+		return res
+now our add function can add any number of integers or floats
+>>>add(3,4,5,6,7,3,3)
+31
+>>>add(range(4))   #0+1+2+3
+6
+Suppose we are sure of that our function will have only keyword
+arguements but they are too many and we cant write all of them
+in the defination of function(i.e. in header of function) then we
+use below approach
+	def add(**kwargs):
+		return a+b
+>>>add(a=7,b=8)
+15
+
+These above two texts are actually unpacking approach
+
+Now suppose we know that we will define a function but we are
+currently not sure about its body will do what then we use pass
+statement and will come and define it neatly later,so even if
+this function gets called before defination of its body,then too it
+wont throw any error
+	def add():pass            def add(): ... 
+
+NOTE : Now all above syntaxes shown cannot be combined to produce
+diffirent functions as we wish.
+	def add( a , * , *args ,  / ,keyarg=12, **kwargs):pass
+above line gives errors
+we have to use that first method of only ( ... , * , ...... , / , .....) and above
+method of (*args , **kwargs) seprately only
+
+___________________________________________________________________________________
+Now the arguements which are passed inside function are all passed
+by reference for mutable things like variables storing lists , and passed by value for
+immutable things like variables storing integers,strings,tuples. 
+Actually when we say call by reference passing then it means the variable 
+that is storing mutable value is passed inside actually takes the address of that value,
+hence whenever we make any changes in that variable's value i.e for example 
+list then it actaully affects if the list is stored outside function
+>>>l=[235,465]  #lists are mutable
+>>>a="sritiehr"         #integers are immutable
+>>>def addnum(varmutable,varimmutable):
+	varmutable.append(325)
+	varimmutable="iuewrtiwet"
+>>>print(l)
+[235,465,325]
+>>>print(a)
+"sritiehr"
+And whenever we pass immutable objects like tuples,strings then copy of value is created
+and the vairable inside function points to it,hence no changes happen to variable if it
+has stored that immutable value outside function hence above a does not change.
+_____________________________________________________________________________________
+
+we can see how a function is executing internally from its bytecode dissassembling using
+dis module form standard library. However this method will not work when we pass arguements
+to function call inside dis.dis() and gives error not parsing %s format specified objects
+ def sl(a=12):
+...     for i in range(2):
+...             print('sl')
+...     return a+12
+...
+>>> dis.dis(sl)
+  1           0 RESUME                   0
+
+  2           2 LOAD_GLOBAL              1 (NULL + range)
+             12 LOAD_CONST               1 (2)
+             14 CALL                     1
+             22 GET_ITER
+        >>   24 FOR_ITER                13 (to 54)
+             28 STORE_FAST               1 (i)
+
+  3          30 LOAD_GLOBAL              3 (NULL + print)
+             40 LOAD_CONST               2 ('sl')
+             42 CALL                     1
+             50 POP_TOP
+             52 JUMP_BACKWARD           15 (to 24)
+
+  2     >>   54 END_FOR
+
+  4          56 LOAD_FAST                0 (a)
+             58 LOAD_CONST               3 (12)
+             60 BINARY_OP                0 (+)
+             64 RETURN_VALUE
+>>>
+_____________________________________________________________________________________
+Internally functions are also instances of built-in function class in python
+hence they even have inside methods which are again functions only
+and in such way language python is formed by deep nesting of classes
+by inheritance.We can access methods on functions i.e. ther instances
+of built-in function class which methods are again some instances of that
+same function class only.
+we can see whats inside our function using dir() builtin function of python
+It contains methods and attributes inherited from builtin function class
+which is not directly accesible due to security reasons
+
+>>> import pprint
+>>> pprint.pp(dir(func))
+['__annotations__',
+ '__builtins__',
+ '__call__',
+ '__class__',
+ '__closure__',
+ '__code__',
+ '__defaults__',
+ '__delattr__',
+ '__dict__',
+ '__dir__',
+ '__doc__',
+ '__eq__',
+ '__format__',
+ '__ge__',
+ '__get__',
+ '__getattribute__',
+ '__getstate__',
+ '__globals__',
+ '__gt__',
+ '__hash__',
+ '__init__',
+ '__init_subclass__',
+ '__kwdefaults__',
+ '__le__',
+ '__lt__',
+ '__module__',
+ '__name__',
+ '__ne__',
+ '__new__',
+ '__qualname__',
+ '__reduce__',
+ '__reduce_ex__',
+ '__repr__',
+ '__setattr__',
+ '__sizeof__',
+ '__str__',
+ '__subclasshook__',
+ '__type_params__']
+>>>
+
+these are all methods and attributes inside instance named as func , which has 
+inherited from builtin base class function which again has inerited from most base class object,
+i.e. the building block of python
+
+Note here we are talking about the builtin function class , it should noty confused with the 
+standard library provided builin functions and variables , those all functions are even 
+instances of that builtin function class that is not accessible to us. we just know it exists using
+>>>print(type(func))
+<class 'function'>
+
+Python does not allow us to display the class inheritance heirarchy of this function class due to
+security reasons as people might change inside the root building block of language as functions
+are everywhere in language.
+_______________________________________________________________________________________________

@@ -1,0 +1,50 @@
+we can access variables in global and non-local namespaces that will be declared later in code
+in the nested functions and classes but they need to declared as global or nonlocal before accessing them 
+>>> def pun():
+...     a=2354235
+...     def gun():
+...             global a
+...             print(a)
+...     gun()
+...
+>>> a=565245
+>>> pun()
+565245
+
+see this way we defined that we will access a but it will not giving error because a is defined
+before pun() is called
+>>> def jun():
+...     c=345425
+...     def fun():
+...             global c
+...             print(c)
+...     fun()
+...     def kun():
+...             nonlocal c
+...             print(c)
+...     kun()
+...
+>>> c=2780785
+>>> jun()
+2780785
+345425
+>>>
+similarly we can also access local namespace inside function or class by declaring variable
+inside nested function or class as nonlocal
+
+Here the variables from diffirent namespace and scope have went by reference so any change made
+in them will be affected in all places where they are used with that same address , because the change
+happens at value stored at that address
+>>> def yun():
+...     z=43543
+...     def pun():
+...             global z
+...             z=436
+...             print(z)
+...     pun()
+...
+>>> z=9999
+>>> yun()
+436
+>>> z
+436

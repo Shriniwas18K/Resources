@@ -1,0 +1,8 @@
+decorators are nothing but composition of functions like in mathematics: functions whose
+arguements are functions
+def g(f):
+	if(callable(f)==True):
+		print('we will execute f')
+		f()
+	else:
+		print('f is not callable')

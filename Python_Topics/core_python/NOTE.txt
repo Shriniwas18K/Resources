@@ -1,0 +1,21 @@
+
+ALL OF THESE FILES CONTAIN IMPROPER KNOWLEDGE INSTEAD GO REFER TO CPYTHON INTERNALS BOOK
+
+
+In these all files of this folder we have used standard library and other 
+libraries for explanaing core python concepts
+
+in python everything is instance of some class which is hierarchy of inheritance
+of object class the mosty basic building block of python language.
+
+But term object is loosely used in python.It means
+
+TypeError: 'str' object is not callable
+
+here python wants to say object as "instance" and not the most basic building 
+block class object of python
+
+But in our texts whenever we will use term object then it will mean that most basic 
+building block class named as object only
+
+we will not term objects as instance of classes , instead we will use the word "instances" explicitely there

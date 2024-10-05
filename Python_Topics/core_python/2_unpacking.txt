@@ -1,0 +1,31 @@
+we can have unpacking assignments like
+
+a,*b,c,d=[1,43,54,346,658,354,35,6]
+
+here a=1, d=6, c= 35 , b=[43,54,346,658,354]
+
+*b in assignment refers that this variable supports
+
+Here above we done with list, but it is supportable 
+with tuples , but not strings and 
+not iterators
+
+despite of whatever we unpack , when assigned
+variables contain multiple values like of b above
+then they will always be list.
+
+but when we unpack dictionaries only if keys are strings
+d= {'1234':5467 , 'a' :3465}
+and we need to use ** and moreover this can be only
+used for passing keyword arguements to functions
+print(**d) or a=**d will throw error
+>>>def add(a=0,b=0):
+	return a+b
+>>>kwargs={'a':10,'b':8}
+>>>print(add(**kwargs))
+18
+
+the thing that we get from **kwargs cannot be stored.
+It is actually stored by assigning the values to multiple variables
+which are keyword arguements,hence we can access value
+of a inside above add function

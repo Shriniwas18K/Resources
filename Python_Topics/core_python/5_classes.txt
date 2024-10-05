@@ -1,0 +1,104 @@
+everything in ython is instance of some class which has inherited from the most basic class
+the object which is buyilding block of python. Here in python classes have static members
+kind of C++ way termed as class members in the official documentation. All instances 
+refer to same address whenever they try to access them.They are also called as data variables.
+But this happens only if they store of Mutable things. 
+class Dog:
+
+    tricks = []             # mistaken use of a class variable
+
+    def __init__(self, name):
+        self.name = name
+
+    def add_trick(self, trick):
+        self.tricks.append(trick)
+
+>>> d = Dog('Fido')
+>>> e = Dog('Buddy')
+>>> d.add_trick('roll over')
+>>> e.add_trick('play dead')
+>>> d.tricks                # unexpectedly shared by all dogs
+['roll over', 'play dead']
+
+Hence whenever these static members store mutable things then that mutation affects
+all its and its derived class's instances as well.
+
+Now see if they store immutable things then each instance gets seprate copy of that variable
+storing that immutable thing and if that instance changes that variables value , i.e makes it
+point to some diffirent address then that changes is only for that instance only and other instances 
+of that class do not get affected by this change. That is written in python docs but  in little diffirent way
+ """ If the same attribute name occurs in both an instance and in a class, 
+then attribute lookup prioritizes the instance"""
+>>>
+class Warehouse:
+   purpose = 'storage'
+   region = 'west'
+
+>>>w1 = Warehouse()
+>>>print(w1.purpose, w1.region)
+storage west
+>>>w2 = Warehouse()
+>>>w2.region = 'east'
+>>>print(w2.purpose, w2.region)
+storage east
+>>> print(w1.region)
+west
+
+But that is not case with static methods.All instances share same behavior
+because we cannot change function body or individual instances.Like C++
+we dont need to declare instance of class to access static members and methods
+>>> class A:
+...     stat="i am static member"
+...     def staticMethod():
+...             print("executed without instance")
+...
+>>> A.stat
+'i am static member'
+>>> A.staticMethod()
+executed without instance
+>>>
+
+we can also define functions outside class to remove extra indentation
+def f1(self, x, y):
+    return min(x, x+y)
+
+class C:
+    f = f1
+    def g(self):
+        return 'hello world'
+    h = g
+f will be not treated as static method
+
+when multiple classes are inherited into a single class , the order of inheritance
+in them changes dynamically at runtime.
+Dynamic ordering is necessary because all cases of multiple inheritance exhibit 
+one or more diamond relationships (where at least one of the parent classes can be 
+accessed through multiple paths from the bottommost class). For example, all classes 
+inherit from object, so any case of multiple inheritance provides more than one path 
+to reach object. To keep the base classes from being accessed more than once, the 
+dynamic algorithm linearizes the search order in a way that preserves the left-to-right 
+ordering specified in each class, that calls each parent only once, and that is monotonic 
+(meaning that a class can be subclassed without affecting the precedence order of its parents).
+
+This is repairing for virtual base class concept of C++, where in diamond kind of inheritance
+shown below the multiple paths can exist without declaring class A as virtual, hence python
+does not contain concept of virtual functions and virtual classes. In C++ below is not possible
+without declaring class A as virtual . In C++ virtual class means it class cannot be instantiated,
+i.e. we cannot declare instances of that class. They are used to define abstract structure of
+instances like the classes inheriting them will get thier virtual functions defined by overriding.
+		class A
+	           ______|_______
+                           |                       |
+                        class B           class C
+	          |_____________|
+		    |
+                                  class D
+
+In C++ we cannot declare instances of class A here , but in python we can declare 
+All above lines were just saying this because in python that class A is actually the
+most basic object class the building block of language.
+
+But this concept of just defining abstract structure class that will be inherited later and defined
+later by overiddingf methods is still useful though it is not implemented in python.But still people
+want this concept hence people have devised using decorator on class A to declare it as virtual
+or abstract.
