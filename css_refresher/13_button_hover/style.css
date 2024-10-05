@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+article{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+button{
+    height: clamp(2cm,1em,2em);
+    width: clamp(5cm,10vw,10cm);
+    background: #f0f0f0;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+span{
+    background-color: red;
+    display: block;
+    position: absolute;
+}
+.border-top{
+    height: 4px;
+    top:0;
+    width: 100%;
+    transform: translateX(-101%);
+}
+button:hover .border-top{
+    transform: translateX(0);
+    transition: transform 0.15s linear;
+}
+/* asd */
+.border-right{
+    width: 4px;
+    top:0;
+    right:0;
+    height: 100%;
+    transform: translateY(-101%);
+}
+button:hover .border-right{
+    transform: translateY(0);
+    transition: transform 0.15s 0.15s linear;
+}
+.border-bottom{
+    height: 4px;
+    bottom:0;
+    width: 100%;
+    transform: translateX(+101%);
+}button:hover .border-bottom{
+    transform: translateX(0);
+    transition: transform 0.15s 0.3s linear;
+}
+.border-left{
+    width: 4px;
+    bottom:0;
+    height: 100%;
+    transform: translateY(+101%);
+}
+button:hover .border-left{
+    transform: translateX(0);
+    transition: transform 0.15s 0.45s linear;
+}

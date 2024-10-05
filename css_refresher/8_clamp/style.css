@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+.ele{
+    height: clamp(200px,50vh,400px);
+    /* it refers that prefered height of element is 50% for all screens initially
+
+       but if it is not possible and element goes out of 
+       veiwport for smaller screens then it will be given 200 px height as min
+
+       similarly if screen size is too large and thereby element is getting very
+       large due to 50% prefered height then it will be limited to 400px as max
+
+       same can be applied to all other numeric value properties as well
+    */
+    background-color: yellow;
+    width: clamp(200px,50vh,400px);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}

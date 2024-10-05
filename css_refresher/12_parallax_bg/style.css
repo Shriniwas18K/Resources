@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+section{
+    height:70dvh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;background-position: center;
+    background-size: cover;
+}
+section h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1em;
+    padding: 0.5em;
+    border: 0.1em double white;
+}
+section:nth-child(1){
+    /* dont change sequence of below 2 lines else effect wont work as css cascades */
+    background-image: url(./img1.jpg);
+    background-attachment: fixed;
+}
+section:nth-child(3){
+    background-image: url(./img2.jpg);
+    background-attachment: fixed;
+}

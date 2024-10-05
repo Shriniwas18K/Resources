@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+#main{
+    height: 40vw;
+    width: 40vw;
+    background-color:yellow;
+    padding: 1vw;
+    display: flex;
+    justify-content:space-between ;/* it is used to align items along main horizontal axis*/
+    align-items:flex-end;/* it is used to align items along cross vertical axis*/
+    /* both above properties change the height and width of children elements to align them on screen */
+}
+.box{
+    background-color: red;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: smaller;
+    color: white;
+    margin: 1vh;
+    height: 9vw;
+    width: 9vw;
+    /* children of flexbox then thier height and weight will be overidden to keep them inside its boundaries */
+}

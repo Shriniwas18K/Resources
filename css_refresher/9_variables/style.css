@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+:root{
+    /* global variables */
+    --bgc:rgb(256,50,0);
+    /* this helps in changing themes of website dynamically */
+}
+.ele{
+    height: 20vh;
+    width: 20vh;
+    background-color: var(--bgc);
+    margin: 1vh;
+}
