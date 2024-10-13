@@ -1,0 +1,109 @@
+Python has three layers in form of stack
+	  __________________________________________________________
+	  |						|
+level 3 :      |         libraries made over years for common tasks               |
+	  |_______________________________________________________ |
+	  |						|
+level 2 :	  |	standard library written in C			|
+	  |________________________________________________________|
+	  |						|
+level 1 :	  |	core python language			|
+	  |________________________________________________________|
+
+at its core python is fully instance-oriened language i.e. everything is instance
+of some class. Read objects.pdf for more on above line.
+
+Whenever we learn python we need only its level 1 knowledge , rest both levels features
+can be used from documentation whenever needed 
+
+Now we will see what each level gives us :
+
+LEVEL 1:		CORE PYTHON ONLY (no standard library or any other level 2,3 stuff)
+	Variables
+	Operators (arithmetic, comparison, logical)
+	Control flow (if/else, for/while)
+	Functions (limited)
+	Basic input/output (console)
+	Numbers (int, float)
+	Booleans (True, False)
+	Strings (with limitations)
+	Classes (potentially limited functionality)
+	Iterators 
+	Generators 
+	Decorators 
+
+Core Language Features:
+
+Variables: You can declare and assign values to variables of basic data types like integers, 
+floats, booleans, and strings. However, string manipulation capabilities would be severely limited.
+
+Operators: You'll have access to basic arithmetic, comparison, and logical operators for 
+calculations and conditional checks.
+
+Control Flow: You can use if/else statements for conditional execution and for/while loops for 
+iterating over sequences.
+
+Functions: You can define simple functions to encapsulate reusable blocks of code. However, 
+advanced features like function arguments, default values, or returning multiple values might be restricted.
+
+Basic Input/Output: There might be limited ways to interact with the user through console input 
+and output (depending on the specific stripped-down environment).
+
+
+Limited Data Structures:
+
+Numbers (int, float): You can still perform basic arithmetic operations with integers and floating-point numbers.
+
+Booleans (True, False): You can use True and False for logical checks.
+
+Strings (with limitations): You might be able to create and manipulate strings to a certain extent, but functionalities like slicing, concatenation, searching, and advanced string methods would likely be unavailable.
+
+Classes (Potentially Limited Functionality):You can define classes to create custom data structures and functionalities. 
+However, some functionalities related to class creation, inheritance, or special methods 
+might be limited.
+
+Iterators (Core Concept): The concept of iterators, which provide a way to access elements
+ of a sequence one at a time, is a fundamental part of the language. You could potentially 
+implement your own iterators for custom data structures, but it would be much more work 
+compared to using the standard library.
+
+Generators (Core Concept):Generators, a special type of function that yields values one at a time,
+ are also built-in features. You could still define and use generators without the standard library.
+
+Decorators (Core Concept):Decorators, a syntactic sugar for modifying functions, are also part of the Python language core. 
+You could define and use decorators for code reusability. 
+
+In essence, you'll be working with a very bare-bones version of Python, severely limited in what you 
+can achieve without the standard library. 
+
+LEVEL 2:		Standard library with most of code written in C
+Python’s standard library is very extensive, offering a wide range of facilities as indicated by the long
+ table of contents listed below. The library contains built-in modules (written in C) that provide access
+ to system functionality such as file I/O that would otherwise be inaccessible to Python programmers, 
+as well as modules written in Python that provide standardized solutions for many problems that occur
+ in everyday programming. Some of these modules are explicitly designed to encourage and enhance 
+the portability of Python programs by abstracting away platform-specifics into platform-neutral APIs.
+
+See what's in standard library on this url : https://docs.python.org/3/library/index.html
+
+It comes installed by-default with python installation.
+
+LEVEL 3: libraries that are built over years like numpy seaborn etc
+
+How python manages to be performant depsite of standard library:
+The standard library comes into play only if you import its specific modules for your code execution. 
+Here's a more precise explanation:
+Interpreter Startup: When you launch the Python interpreter, it loads its core functionalities, 
+independent of the standard library.
+Module Search Path: The interpreter maintains a search path for locating modules used in your code. 
+The standard library's location is pre-defined within this path.
+Import Statements: This is where the standard library becomes relevant. When your code uses an 
+import statement to bring in functionality:
+If you import a module from the standard library (e.g., import math), the interpreter searches the 
+pre-defined path and loads that specific module.
+If you don't import any modules from the standard library, your code runs using the interpreter's core 
+functionalities and any additional libraries you might have installed.
+
+
+Todays python code that people write uses most of libraries only but knowing core python is essential
+to implement anything performant than any other implementation that exists in the world.
