@@ -5,16 +5,23 @@
   1) William Fiset
   2) Reducible
   3) Micheal Sambol
-  4) Striver A2Z DSA Sheet
+  4) Neetcode
+  5) Striver A2Z DSA course
 - Websites : Baeldung
-- Practice :
-  1) Hackerrank
-  2) LeetCode
+- Practice and Contests :
+  1) LeetCode (check solutions of each qs which contain sometimes comments giving new techniques more optmized)
+  2) GFG
+
+## DBMS : Oracle(most used in industry due to PL/SQL)
+- websites/playgrounds
+  1) Oracle Live SQL (playground)
+  2) Oracle Dev Gym  (courses)
+  3) Official Oracle Database docs are like books itself(stable vast easy to understand with diagrams)
 
 ## Java and OOP and Core CS subjects and any other programming concepts
 - Websites :
   1) Baeldung
-  2) Oracle Java SE 8 Official Documentation.
+  2) Oracle Official Documentation of any product.
   3) Refactoring.guru
    
 ## ML DL Data Science
