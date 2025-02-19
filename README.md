@@ -15,8 +15,8 @@
 ## DBMS : Oracle(most used in industry due to PL/SQL)
 - websites/playgrounds
   1) Oracle Live SQL (playground)
-  2) Oracle Dev Gym  (courses)
-  3) Official Oracle Database docs are like books itself(stable vast easy to understand with diagrams)
+  2) Oracle Dev Gym  (courses) : SQL has three levels(foundations for appln devs, next level for data analysts, performance for DBAs)
+  4) Official Oracle Database docs are like books itself(stable vast easy to understand with diagrams)
 
 ## Java and OOP and Core CS subjects and any other programming concepts
 - Websites :
