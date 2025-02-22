@@ -7,7 +7,9 @@
   3) Micheal Sambol
   4) Neetcode
   5) Striver A2Z DSA course
-- Websites : Baeldung
+- Websites :
+  1) **https://cp-algorithms.com/**       (this is goldmine of performance and optimization)
+  2) baeldung
 - Practice and Contests :
   1) LeetCode (check solutions of each qs which contain sometimes comments giving new techniques more optmized)
   2) GFG
