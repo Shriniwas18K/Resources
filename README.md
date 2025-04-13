@@ -10,6 +10,7 @@
 - Websites :
   1) **https://cp-algorithms.com/**       (this is goldmine of performance and optimization)
   2) baeldung
+  3) https://usaco.guide/ (this is goldmine of concepts of competetive programming)
 - Practice and Contests :
   1) LeetCode (check solutions of each qs which contain sometimes comments giving new techniques more optmized)
   2) GFG
@@ -21,21 +22,15 @@
   4) Official Oracle Database docs are like books itself(stable vast easy to understand with diagrams)
 
 ## Java and OOP and Core CS subjects and any other programming concepts
+- Youtube :
+  1) DurgaSoft channel durga sir core java playist
+  2) Shandilya codes multithreading
+  3) Sergey Tech channel spring security
 - Websites :
   1) Baeldung
   2) Oracle Official Documentation of any product.
   3) Refactoring.guru
-   
-## ML DL Data Science
-- Youtube :
-  1) Campusx
-  2) Statquest with Josh Hammer
+  4) DurgaSoft core java and advanced java notes from telegram/github
 
-## Developer Ecosystem News 
-- Youtube :
-  1)fireship
-  2)awesome
-
-For books refer to Telegram channels.Junior Developer stuffs(beginner to intermeddiate level depth of frameworks and more focus on usages and projects) are written in Packt publishers books.More depth and Senior Developer stuffs(optimizing performance and advanced concepts in frameworks and languages) are written in books only by Oreily and Manning publishers.
+For books refer to Telegram channels.Junior Developer stuffs(beginner to intermeddiate level depth of frameworks and more focus on usages and projects) are written in Packt publishers books.More depth and Senior Developer stuffs(optimizing performance and advanced concepts in frameworks and languages) are written in books only by Oreily and Manning publishers and Durgasoft etc institute notes.
 - https://t.me/DataScience_Books/4430
-- https://t.me/reactbooks
