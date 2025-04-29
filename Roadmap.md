@@ -43,4 +43,6 @@ Whereas outside India companies goes more towards Spring way and modern java and
 - download the notes of institutes from telegram channels
 
 # Android Engineering
-Indian industry stays on legacy java way to develop apps and few of them prefer to develop using react-native,flutter way. Many are introducing kotlin to codebases. We are new to it so will write it later.
+Indian industry stays on legacy java way to develop apps and few of them prefer to develop using react-native,flutter way. Many are introducing kotlin to codebases. The core concepts are very simple and much of android involves using core java ecosystem stuff and fetching data from REST-APIs and putting in views. Apps are built for almost any purpose, check out google playstore and check apps of companies to social media.
+- 1) we use UI libraries/design systems similar to React MUI we have Microsoft Fluent,Google Material Design,Jetpack Compose,SamsungOneUI.Each company uses these or their own.
+- 2) we use Core java stuffs like OOP mainly,multithreading for parrallelism(8 cores of android are useful) in service layer and data fetching and management in application.
