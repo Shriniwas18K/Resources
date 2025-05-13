@@ -28,6 +28,9 @@
   3) Sergey Tech channel spring security
   4) Java 8 features from https://youtu.be/UfJ0lCH7FMM
 
+## Python 
+The LTS is released every year so best found book from perspective of software development which deeply aligns on knowing of C++ and Java stuffs if Expert Programming in Python. It is in this repository. It takes from intermeddiate to professional kind of senior software engineer stuffs.
+
 ## Certifications(Free):
 Whatever you do earn certification for it.Hiring commitees value certificates. Get certifications from these websites.
 - CodeSignal
