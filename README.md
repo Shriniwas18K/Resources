@@ -37,6 +37,14 @@
 ## Python 
 The LTS is released every year so best found book from perspective of software development which deeply aligns on knowing of C++ and Java stuffs if Expert Programming in Python. It is in this repository. It takes from intermeddiate to professional kind of senior software engineer stuffs.
 
+## Finite Element analysis and Mechanical Engg Stuff
+- Youtube
+ 1) Good Vibrations with Freeball
+ 2) Dr Simulate
+ 3) The Efficient Engineer
+- NPTEL(available on youtube
+ 1) Basics of finite element analysis I & II by Prof Nachiketa Tiwari
+
 ## Certifications(Free):
 Whatever you do earn certification for it.Hiring commitees value certificates. Get certifications from these websites.
 - CodeSignal
