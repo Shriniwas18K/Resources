@@ -28,6 +28,12 @@
   3) Sergey Tech channel spring security
   4) Java 8 features from https://youtu.be/UfJ0lCH7FMM
 
+## C++ OOP
+- Youtube :
+  1) Mike Shah Cpp playist(modern cpp)
+  2) Cherno
+  3) C++ weekly with Jason Turner(advanced cpp topics like allocators)
+
 ## Python 
 The LTS is released every year so best found book from perspective of software development which deeply aligns on knowing of C++ and Java stuffs if Expert Programming in Python. It is in this repository. It takes from intermeddiate to professional kind of senior software engineer stuffs.
 
