@@ -9,7 +9,7 @@
   5) Striver A2Z DSA course
 - Websites :
   1) **https://cp-algorithms.com/**       (this is goldmine of performance and optimization)
-  2) baeldung
+  2) **baeldung** (goldmine of CS information)
   3) https://usaco.guide/ (this is goldmine of concepts of competetive programming)
 - Practice and Contests :
   1) LeetCode (check solutions of each qs which contain sometimes comments giving new techniques more optmized)
@@ -57,7 +57,6 @@ Whatever you do earn certification for it.Hiring commitees value certificates. G
 
 ## Websites :
   1) Baeldung
-  2) Oracle Official Documentation of any product.
   3) Refactoring.guru
   4) DurgaSoft core java and advanced java notes from telegram/github
 For books refer to Telegram channels.Junior Developer stuffs(beginner to intermeddiate level depth of frameworks and more focus on usages and projects) are written in Packt publishers books.More depth and Senior Developer stuffs(optimizing performance and advanced concepts in frameworks and languages) are written in books only by Oreily and Manning publishers and Durgasoft etc institute notes.
