@@ -42,6 +42,7 @@ The LTS is released every year so best found book from perspective of software d
  1) Good Vibrations with Freeball
  2) Dr Simulate
  3) The Efficient Engineer
+ 4) Steve Brunton
 - NPTEL(available on youtube
  1) Basics of finite element analysis I & II by Prof Nachiketa Tiwari
 
