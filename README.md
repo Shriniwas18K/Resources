@@ -37,12 +37,20 @@
 ## Python 
 The LTS is released every year so best found book from perspective of software development which deeply aligns on knowing of C++ and Java stuffs if Expert Programming in Python. It is in this repository. It takes from intermeddiate to professional kind of senior software engineer stuffs.
 
-## Finite Element analysis and Mechanical Engg Stuff
+## System Design
+- Youtube:
+  1) Bytebytego
+  2) Bytemonk
+
+## Finite Element analysis and Mechanical Engg, General tech Stuff
 - Youtube
  1) Good Vibrations with Freeball
  2) Dr Simulate
  3) The Efficient Engineer
  4) Steve Brunton
+ 5) Visually explained convex optimisation
+ 6) Branch Education
+ 7) TomS linear programming graph theory
 - NPTEL(available on youtube
  1) Basics of finite element analysis I & II by Prof Nachiketa Tiwari
 
