@@ -10,7 +10,8 @@
 - Websites :
   1) **https://cp-algorithms.com/**       (this is goldmine of performance and optimization)
   2) **baeldung** (goldmine of CS information)
-  3) https://usaco.guide/ (this is goldmine of concepts of competetive programming)
+  3) https://usaco.guide/ (this is silvermine for competetive programming)
+  4) https://youkn0wwho.academy/topic-list (this is goldmine for competetive programming)
 - Practice and Contests :
   1) LeetCode (check solutions of each qs which contain sometimes comments giving new techniques more optmized)
   2) GFG
