@@ -59,6 +59,12 @@ The LTS is released every year so best found book from perspective of software d
 - NPTEL(available on youtube
  1) Basics of finite element analysis I & II by Prof Nachiketa Tiwari
 
+## Data science and AI
+- Campusx
+- Marvio Favaits
+- AI Focus Wenhua Nu
+- StatQuest with Josh Hammer
+  
 ## Certifications(Free):
 Whatever you do earn certification for it.Hiring commitees value certificates. Get certifications from these websites.
 - CodeSignal
