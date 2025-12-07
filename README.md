@@ -41,6 +41,12 @@
 
 ## Python 
 The LTS is released every year so best found book from perspective of software development which deeply aligns on knowing of C++ and Java stuffs if Expert Programming in Python. It is in this repository. It takes from intermeddiate to professional kind of senior software engineer stuffs.
+### Youtube:
+- indently
+- neuralnine
+- m_Coding
+### Linked Learning
+- Advanced Python oop by Miki Thebeka (best python course found till now)
 
 ## System Design
 - Youtube:
