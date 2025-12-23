@@ -29,6 +29,7 @@
   3) Sergey Tech channel spring security
   4) Java 8 features from https://youtu.be/UfJ0lCH7FMM
   5) Peachez Programming channel(Spring boot)
+  6) [SpringDeveloper](https://www.youtube.com/@SpringSourceDev/featured)
 - Website :
   1) baeldung
   2) https://www.logicbig.com/index.html
