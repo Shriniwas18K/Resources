@@ -33,6 +33,7 @@
 - Website :
   1) baeldung
   2) https://www.logicbig.com/index.html
+  3) [Java Learning Platform](https://mshemeel.github.io/java-learning/)
      
 ## Operating Systems
 (Gagne book slides are enough)  https://os-book.com/OS9/slide-dir/index.html
