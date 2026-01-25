@@ -24,7 +24,7 @@ class BaseMixin(ABC):
     def mixin_method(self):
         print("default implementation")
 
-class Derived(Base):
+class Derived(BaseMixin):
     def m(self):
         print("Derived")
 

@@ -14,7 +14,7 @@ lifecycle using methods like __new__,__init__,__call__,__getattr__,__setattr__
 this way we can set structure how classes will be, how many
 methods will they have,how many attributes they have etc
 """
-class Happy:...
+class Happy:... # Object class by default added as root in mro since Python 3
 print(type(Happy))
 print(type(Happy()))
 
@@ -33,7 +33,7 @@ class CustomMeta(type):
     def __init__(cls,name,bases,mapping):
         #instance creation
         print(mapping)
-        print(f'new instance created for {name}')
+        print(f'new instance creating for {name}')
         return type.__init__(cls,name,bases,mapping)
 
     def __call__(cls,*args,**kwargs):
@@ -42,21 +42,20 @@ class CustomMeta(type):
 
 class Robot(metaclass=CustomMeta):
     attribute='value'
-    # def __new__(cls,*args,**kwargs):
+    # def __new__(cls,*args,**kwargs): 
+    #   # above metaclass __call__ and this __new__ 
+    #   # are mutually exclusive in usage,else infinite recursion
     #     print("Robot instance creation")
     #     return cls(*args,**kwargs)
     def __init__(self,*args,**kwargs):
         print("Robot instance init")
-    def __call__(self,*args,**kwargs):
-        print("Robot invoked")
     def move(self):
         print('reached at correct destination')
 
-walle=Robot()
-walle.move()
+walle=Robot() # new class created -> new instance creating -> creating instance -> instance init
+walle.move() # reached at correct destination
 print()
-print()
-print(type(Robot))
-print(type(walle))
+print(type(Robot)) # CustomMeta
+print(type(walle)) # Robot
 
-print(Robot.__mro__)
+print(Robot.__mro__)# Object class is by default added here

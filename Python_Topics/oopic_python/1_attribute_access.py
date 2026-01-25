@@ -17,9 +17,11 @@ print(p2.num_players) # 1
 """
 python stores attributes of each object in dunder __dict__ attribute
 and everything is object in python.It does lookup in order as
-1) instance dunder __dict__
-2) dunder __dict__ of class of the instance
-3) dunder __dict__ of the classes in order of the __mro__ of the class of the instance
-4) dunder __getattr__ and then descriptors searching
-else AttributeError
+
+0) __getattribute__ if attribute is accessed using . operator
+1) check if its property and invoke getter
+2) dunder __getattr__
+3) dunder __dict__ of the instance
+4) dunder __dict__ of class of the instance
+5) dunder __dict__ of the classes in order of the __mro__ of the class of the instance
 """
