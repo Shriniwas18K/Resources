@@ -47,6 +47,7 @@
 ## Python 
 The LTS is released every year so best found book from perspective of software development which deeply aligns on knowing of C++ and Java stuffs if Expert Programming in Python. It is in this repository. It takes from intermeddiate to professional kind of senior software engineer stuffs.
 ### Youtube:
+- Learn fundamentals (https://www.youtube.com/@LearnFundamentals/featured) (best channel for python and ecosystem)
 - indently
 - neuralnine
 - m_Coding
