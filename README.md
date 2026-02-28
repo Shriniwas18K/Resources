@@ -92,9 +92,13 @@ Whatever you do earn certification for it.Hiring commitees value certificates. G
   1) Baeldung
   3) Refactoring.guru
   4) DurgaSoft core java and advanced java notes from telegram/github
-     
+
+## Get your dev env setup with liscensed tools, trainings etc from Microsoft
+- [Azure for Students](https://azure.microsoft.com/en-in/free/students/)
+- [Visual Studio Dev Essentials](https://visualstudio.microsoft.com/dev-essentials/)
+- [Trends of market sessions on Microsoft Products](https://www.meetup.com/microsoft-reactor-bengaluru/)
+  
 ### The way to find quality video resources: on youtube/edge videos search for some advanced topic directly, example while searching for computer networks directly search for deep packet inspection firewalls, then find relevant video where content is explained well then find the playist of that video and explore the channel.
 
 For books refer to Telegram channels.Junior Developer stuffs(beginner to intermeddiate level depth of frameworks and more focus on usages and projects) are written in Packt publishers books.More depth and Senior Developer stuffs(optimizing performance and advanced concepts in frameworks and languages) are written in books only by Oreily and Manning publishers and Durgasoft etc institute notes.
 - https://t.me/DataScience_Books/4430
-  
