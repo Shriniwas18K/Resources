@@ -71,6 +71,12 @@ The LTS is released every year so best found book from perspective of software d
 - NPTEL(available on youtube
  1) Basics of finite element analysis I & II by Prof Nachiketa Tiwari
 
+## Web Development
+-Youtube
+1) Sheriyans Coding School
+- Course
+1) [MOOC](https://fullstackopen.com/en/)
+
 ## Data science and AI
 - Campusx
 - Marvio Favaits
