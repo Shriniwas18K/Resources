@@ -36,9 +36,9 @@ syntax to define a function:
 def funcname( ......... , /  , .............. , * , .............) -> returnType :
 	             ^               ^                  ^
 	             |               |                  |
-	         purely       called            called purely
-	       positional   as both          keyword in
-	          args         positional      function call
+	         purely          called            called purely
+	       positional       as both          keyword in
+	          args                          function call
                                            and keyword
                                            in function call
 
@@ -96,15 +96,15 @@ we have to use that first method of only ( ... , * , ...... , / , .....) and abo
 method of (*args , **kwargs) seprately only
 
 ___________________________________________________________________________________
-Now the arguements which are passed inside function are all passed
-by reference for mutable things like variables storing lists , and passed by value for
-immutable things like variables storing integers,strings,tuples. 
-Actually when we say call by reference passing then it means the variable 
-that is storing mutable value is passed inside actually takes the address of that value,
-hence whenever we make any changes in that variable's value i.e for example 
-list then it actaully affects if the list is stored outside function
+Now the args to functions are always passed by reference in python. But here we have
+immutable and mutable things ahead. Mutable things when modified get the changes
+reflected inside actual thing in them whereas immutable things cannot be modified, 
+i.e. if temp = (1,2) and as tuple is immutable and we pass it inside some function
+which modifies as temp=(4,5,6) it wont affect the value of temp outside the function
+but inside the function new tuple object (4,5,6) is created and used.
+
 >>>l=[235,465]  #lists are mutable
->>>a="sritiehr"         #integers are immutable
+>>>a="sritiehr"         #string is immutable
 >>>def addnum(varmutable,varimmutable):
 	varmutable.append(325)
 	varimmutable="iuewrtiwet"
@@ -112,9 +112,6 @@ list then it actaully affects if the list is stored outside function
 [235,465,325]
 >>>print(a)
 "sritiehr"
-And whenever we pass immutable objects like tuples,strings then copy of value is created
-and the vairable inside function points to it,hence no changes happen to variable if it
-has stored that immutable value outside function hence above a does not change.
 _____________________________________________________________________________________
 
 we can see how a function is executing internally from its bytecode dissassembling using
