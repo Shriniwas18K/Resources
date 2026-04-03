@@ -53,6 +53,38 @@ a
 p
 s
 
+"""Thus iterators can be used to construct data structures that support one by one iterating over 
+elements in them. Similarly we can create iterators for fancy kind of customised iteration of something
+likewise say for generating fibonacci series. Kind of constructing even infinte series or compute only
+whenever the element is processed during iteration thus allows lazy computation until the element is 
+indeed used in map(),filter() functional constructs or getting next element in the DFS or any traversal
+algortihm of tree or graph. Infact itertools module provides builtin iterators like combinations() etc.
+"""
+class FibIterator:
+    def __init__(self):
+        self.a=1
+        self.b=2
+    def __iter__(self):return self
+    def __next__(self):
+        temp = self.a 
+        self.a=self.b
+        self.b=temp+self.b
+        return temp
+    
+fib_iterator = iter(FibIterator())
+for i in range(10):
+    print(next(fib_iterator))
+1
+2
+3
+5
+8
+13
+21
+34
+55
+89
+
 Generators are syntactic sugars on iterators
 Generators are a simple and powerful tool for creating iterators. They are written like regular 
 functions but use the yield statement whenever they want to return data. Each time next() is 
