@@ -101,15 +101,37 @@ f
 l
 o
 g
+
+def fibonacci(n):
+    a = 1
+    b = 2
+    for c in range(n):
+        temp = a
+        a=b
+        b=b+temp
+        yield temp
+for i in fibonacci(10):
+    print(i)
+1
+2
+3
+5
+8
+13
+21
+34
+55
+89
+
 Anything that can be done with generators can also be done with class-based iterators as 
 described in the previous section. What makes generators so compact is that the __iter__() 
-and __next__() methods are created automatically.
-Another key feature is that the local variables and execution state are automatically saved 
-between calls. This made the function easier to write and much more clear than an approach 
-using instance variables like self.index and self.data.
-In addition to automatic method creation and saving program state, when generators terminate, 
-they automatically raise StopIteration. In combination, these features make it easy to create 
-iterators with no more effort than writing a regular function.
+and __next__() methods are created automatically. Another key feature is that the local 
+variables and execution state are automatically saved between calls. This made the function 
+easier to write and much more clear than an approach using instance variables like self.index
+and self.data. In addition to automatic method creation and saving program state, when 
+generators terminate, they automatically raise StopIteration. In combination, these features 
+make it easy to create iterators with no more effort than writing a regular function. Thus 
+they are used in making context managers.
 
 Generator Expressions
 Some simple generators can be coded succinctly as expressions using a syntax similar to list 
