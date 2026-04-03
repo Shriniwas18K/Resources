@@ -1,0 +1,47 @@
+Context managers are used in Python for resource handling, access control and mainly all 
+setup and clean tasks like memory allocation,database connection management. They use 
+with statement for handling. E.g. builtin with open()
+
+>>> with open("file.txt",'r') as f:
+		f.write("hello world")
+	# file automatically closed
+
+Building custom context manager involves __enter__ and __exit__ overridding.
+
+>>> class MyContext:
+		def __enter__(self):
+			print("Entering the context")
+			return self  # Optional: value assigned to 'as' variable
+    	def __exit__(self, exc_type, exc_value, traceback):
+        	print("Exiting context")
+        	if exc_type:
+            	print(f"An error occurred: {exc_value}")
+        	return False  # Returning True suppresses exceptions
+
+>>> with MyContext() as ctx:
+		print("In context")
+
+Entering the context
+In context
+Exiting context
+
+Similarly we can build context managers using functions of contextlib
+
+>>> from contextlib import contextmanager
+>>> @contextmanager
+	def my_context():
+		print("Entering the context")
+		try:
+			yield "hello_world" # code before yield runs while entering context
+		finally:
+			print("Exiting context")
+>>> with my_context() as ctx:
+		print("In context")
+
+Entering the context
+In context
+Exiting context
+
+
+
+
