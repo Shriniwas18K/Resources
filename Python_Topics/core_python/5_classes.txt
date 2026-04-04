@@ -37,12 +37,18 @@ becomes stored in mango instance __dict__.
 >>> mango.country = "US" # stored in the instance __dict__
 >>> print(mango.country) # US
 >>> print(mango.__dict__) # {'country': 'US'}
+we can still access class members on the instance using __class__, thus we can 
+even print class __dict__ using
+>>> print(mango.__class__.__dict__)
+
+Thus shows indirectly every object in Python has just key value pairs stored in its __dict__.
 
 But that is not case with static methods.All instances share same behavior
 because we cannot change function body or individual instances.Like C++
 we dont need to declare instance of class to access static members and methods.
 Static methods in Python are just normal functions just tied to namespace
-of class for grouping them with it semantically.
+of class for grouping them with it semantically. But they are stored in the 
+__dict__ of the class.
 
 >>> class A:
 ...     stat="i am static member"
