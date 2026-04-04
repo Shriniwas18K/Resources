@@ -1,4 +1,15 @@
 """
+Metaclasses and descriptors both are low level python 
+stuffs that are used in very special cases but highly 
+powerful and rather used everywhere underhood kind of 
+entire language structure lies on them.
+
+Descriptors are used for attribute access mechanism hooks
+for all attributes of object.
+Metaclasses are used for object lifecycle management 
+mechanism hooks.
+"""
+"""
 classes are blueprint for instances and metaclasses
 are blueprint for classes
 
