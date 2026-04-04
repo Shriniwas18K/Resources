@@ -1,11 +1,10 @@
-everything in ython is instance of some class which has inherited from the most basic class
-the object which is buyilding block of python. Here in python classes have static members
-kind of C++ way termed as class members in the official documentation. All instances 
-refer to same address whenever they try to access them.They are also called as data variables.
-But this happens only if they store of Mutable things. 
+everything in Python is instance of some class which has inherited from the most basic class
+the object which is building block of python. All instances refer to same address whenever 
+they try to access attribute at class level.
+
 class Dog:
 
-    tricks = []             # mistaken use of a class variable
+    tricks = []             # class level things are always accessible to all instances, also known as class members
 
     def __init__(self, name):
         self.name = name
@@ -16,39 +15,38 @@ class Dog:
 >>> d = Dog('Fido')
 >>> e = Dog('Buddy')
 >>> d.add_trick('roll over')
->>> e.add_trick('play dead')
->>> d.tricks                # unexpectedly shared by all dogs
-['roll over', 'play dead']
+>>> e.add_trick('play')
+>>> d.tricks                # shared by all dogs
+['roll over', 'play']
 
-Hence whenever these static members store mutable things then that mutation affects
+Hence whenever these static/class members store mutable things then that mutation affects
 all its and its derived class's instances as well.
+If the same attribute name occurs in both an instance and in a class __dict__, 
+then attribute lookup prioritizes the instance.The prioritiy of instance attributes 
+over class attributes of same name is seen by this below example where country 
+becomes stored in mango instance __dict__.
 
-Now see if they store immutable things then each instance gets seprate copy of that variable
-storing that immutable thing and if that instance changes that variables value , i.e makes it
-point to some diffirent address then that changes is only for that instance only and other instances 
-of that class do not get affected by this change. That is written in python docs but  in little diffirent way
- """ If the same attribute name occurs in both an instance and in a class, 
-then attribute lookup prioritizes the instance"""
->>>
-class Warehouse:
-   purpose = 'storage'
-   region = 'west'
-
->>>w1 = Warehouse()
->>>print(w1.purpose, w1.region)
-storage west
->>>w2 = Warehouse()
->>>w2.region = 'east'
->>>print(w2.purpose, w2.region)
-storage east
->>> print(w1.region)
-west
+>>> class Fruit:
+    	country = "India" # stored in the class __dict__
+        
+>>> print(Fruit().__dict__)#{}
+>>> print(Fruit.__dict__)#contains country
+>>> mango = Fruit()
+>>> print(mango.country) # India class level answer
+>>> print(mango.__dict__) # {}
+>>> mango.country = "US" # stored in the instance __dict__
+>>> print(mango.country) # US
+>>> print(mango.__dict__) # {'country': 'US'}
 
 But that is not case with static methods.All instances share same behavior
 because we cannot change function body or individual instances.Like C++
-we dont need to declare instance of class to access static members and methods
+we dont need to declare instance of class to access static members and methods.
+Static methods in Python are just normal functions just tied to namespace
+of class for grouping them with it semantically.
+
 >>> class A:
 ...     stat="i am static member"
+...		@staticmethod # optional to write this decorator
 ...     def staticMethod():
 ...             print("executed without instance")
 ...
