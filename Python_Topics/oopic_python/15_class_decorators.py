@@ -32,3 +32,15 @@ class YAMLSerializer:
 @serializer()
 class JSONSerializer2:
     purpose = 'JSON'
+
+# decorators are basically used for wrapping functions, similar to context manager but rather widely used design pattern
+def decorator_function(decorated_function):
+    def wrapper_function():
+        print("Before executing decorated function")
+        decorated_function()
+        print("After executing decorated function")
+    return wrapper_function
+
+@decorator_function
+def temp():
+    print("Inside the actual function")
