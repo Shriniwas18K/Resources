@@ -82,7 +82,10 @@ The LTS is released every year so best found book from perspective of software d
 - Marvio Favaits
 - AI Focus Wenhua Nu
 - StatQuest with Josh Hammer
-- https://jamwithai.substack.com/ (best for RAG)
+- https://jamwithai.substack.com/
+
+## Time Series
+- [Forecasting Principles and Practice 3rd edition](https://otexts.com/fpp3/ )
   
 ## Certifications(Free):
 Whatever you do earn certification for it.Hiring commitees value certificates. Get certifications from these websites.
