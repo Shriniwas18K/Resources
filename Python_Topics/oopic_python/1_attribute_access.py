@@ -24,4 +24,9 @@ and everything is object in python.It does lookup in order as
 3) dunder __dict__ of the instance
 4) dunder __dict__ of class of the instance
 5) dunder __dict__ of the classes in order of the __mro__ of the class of the instance
+=====================================================================
+NOTE : This topic is done in great detail in our articles of python
+        and recommendation is to read it from there because this
+        is at the core of Python as language.
+=====================================================================
 """
