@@ -20,6 +20,9 @@ If we want to print the binary of some object then use dis module
 Sometimes you want custom logic to be implemented when
 some key is not found in dictionary, in that case
 subclass the dict, and implement __missing__
+
+Customising dict and builtin types needs careful handling
+hence we use UserDict,UserList etc classes for subclassing.
 """
 class AdditionOperator:
     def __call__(self,a,b):
