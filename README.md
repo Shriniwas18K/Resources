@@ -43,6 +43,8 @@
   1) Mike Shah Cpp playist(modern cpp)
   2) Cherno
   3) C++ weekly with Jason Turner(advanced cpp topics like allocators)
+- Course :
+  1) [Introduction to Software Development Tooling](https://bernsteinbear.com/isdt/) : contains well structured knowledge for Cpp dev begineers.
 
 ## Python 
 The LTS is released every year so best found book from perspective of software development which deeply aligns on knowing of C++ and Java stuffs if Expert Programming in Python. It is in this repository. It takes from intermeddiate to professional kind of senior software engineer stuffs.
