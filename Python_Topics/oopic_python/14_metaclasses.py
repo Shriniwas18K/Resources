@@ -17,6 +17,8 @@ See from object perspective:
 1) __new__ runs code before memory allocation of object i.e. object creation
 2) object creation is memory allocation, in other languages members are attached at this time because they are statically typed, whereas Python is dynamically typed fully object oriented hence monkey patching is possible hence as convention members are initialized in __init__, but before it methods and class members are attached to the instance.
 3) __init__ runs codes after object creation to initialize object i.e. constructor. This provides thus help to declare instance members in __init__.
+
+object class is implicitely added in mro of every instance of the classes, but not added in classes themselves created by using custom metaclasses.
 """
 class Happy:...
 print(type(Happy))
@@ -53,7 +55,6 @@ class Robot(metaclass=CustomMeta):
 walle=Robot()
 print()
 print()
-print(type(Robot))
-print(type(walle))
-
-print(Robot.__mro__)
+print(type(Robot)) # <class 'CustomMeta'>
+print(type(walle)) # <class 'Robot'>
+print(Robot.__mro__) # <class 'Robot' , class 'object'>
