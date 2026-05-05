@@ -1,31 +1,24 @@
 """
-Metaclasses and descriptors both are low level python 
-stuffs that are used in very special cases but highly 
-powerful and rather used everywhere underhood kind of 
-entire language structure lies on them.
-
-Descriptors are used for attribute access mechanism hooks
-for all attributes of object.
-Metaclasses are used for object lifecycle management 
-mechanism hooks.
-"""
-"""
-classes are blueprint for instances and metaclasses
-are blueprint for classes
+Everything is object in Python. Metaclasses are used to
+create classes in Python.
 
 type is magical thing in python, it is
 1) used to create new types
 2) itself a type
 3) inspect type of object
 
-we will use metaclasses to intercept class lifecycle
-similar to how we use class to intercept the instance
-lifecycle using methods like __new__,__init__,__call__,__getattr__,__setattr__
+we will use metaclasses to intercept class creation
+similar to how we use class to intercept the instance creation.
 
 this way we can set structure how classes will be, how many
 methods will they have,how many attributes they have etc
+
+See from object perspective:
+1) __new__ runs code before memory allocation of object i.e. object creation
+2) object creation is memory allocation, in other languages members are attached at this time because they are statically typed, whereas Python is dynamically typed fully object oriented hence monkey patching is possible hence as convention members are initialized in __init__, but before it methods and class members are attached to the instance.
+3) __init__ runs codes after object creation to initialize object i.e. constructor. This provides thus help to declare instance members in __init__.
 """
-class Happy:... # Object class by default added as root in mro since Python 3
+class Happy:...
 print(type(Happy))
 print(type(Happy()))
 
@@ -34,39 +27,33 @@ from datetime import datetime
 class CustomMeta(type):
 
     def __new__(mclass,name,bases,mapping):
-        #intercept new class creation
-        # name = classname
-        # bases= the inheritance hierarchy of the class
-        mapping['created']=datetime.now()
-        print(f'new class is created with name = {name}')
+        # intercept new class creation
+        # mclass = CustomMeta
+        # name = classname for creation of new class
+        # bases= the inheritance hierarchy of the new class
+        print(f"new class is creation started with name = {name}")
         return type.__new__(mclass,name,bases,mapping)
 
     def __init__(cls,name,bases,mapping):
-        #instance creation
-        print(mapping)
-        print(f'new instance creating for {name}')
+        # intercepting new class initialization
+        # linking of attributes and methods to it
+        print(f"new class {name} created, initializing")
         return type.__init__(cls,name,bases,mapping)
-
-    def __call__(cls,*args,**kwargs):
-        print(f'creating instance of {cls.__name__}')
-        return type.__call__(cls,*args,**kwargs)
 
 class Robot(metaclass=CustomMeta):
     attribute='value'
-    # def __new__(cls,*args,**kwargs): 
-    #   # above metaclass __call__ and this __new__ 
-    #   # are mutually exclusive in usage,else infinite recursion
-    #     print("Robot instance creation")
-    #     return cls(*args,**kwargs)
+    def __new__(cls,*args,**kwargs):
+        # intercepting instance creation
+        print("Robot instance creation started")
+        return super().__new__(cls)
     def __init__(self,*args,**kwargs):
-        print("Robot instance init")
-    def move(self):
-        print('reached at correct destination')
+        # intercepting instance initialization
+        print("Robot instance created,initializing it")
 
-walle=Robot() # new class created -> new instance creating -> creating instance -> instance init
-walle.move() # reached at correct destination
+walle=Robot()
 print()
-print(type(Robot)) # CustomMeta
-print(type(walle)) # Robot
+print()
+print(type(Robot))
+print(type(walle))
 
-print(Robot.__mro__)# Object class is by default added here
+print(Robot.__mro__)
