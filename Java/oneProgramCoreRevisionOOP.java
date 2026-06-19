@@ -106,10 +106,13 @@ class C extends B{
     void desc(){
         // this upcasting
         out.println(((A)this).nonPrivateMember);
+        // below is diffirence of this upcasting and super keyword.
         // this upcasting cannot access overridden
         // implementation of method, though it can
-        // access shadowed fields.
-        ((A)this).instanceMethod();
+        // access shadowed fields. It accesses
+        // always latest overridden version of method
+        // until current class.
+        ((A)this).instanceMethod(); // Overridding impl
         // super keyword can access overridden
         // implementation, but limitation is that
         // only parent class will be covered in it.
