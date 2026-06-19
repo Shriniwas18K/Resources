@@ -34,7 +34,11 @@ class Main {
         // it shines outside same package, where the 
         // protected members can be accessed only inside
         // the child classes in the hierarchy using super 
-        // or this upcasting.
+        // or this upcasting. This allows to access
+        // any non-private non-overridden method or shadowed
+        // field to be accessible inside the class hierarchy.
+        // If overridden method is tried to access then
+        // latest child implementation overridding it executes.
         
         // java doesnt provide super.super... syntax for 
         // accessing ancestry fields, methods that are shadowed
@@ -86,14 +90,39 @@ class Q extends P{
 }
 class A{
     int nonPrivateMember = 108;
+    void instanceMethod(){
+        out.println("Overridden Impl");
+    }
 }
 class B extends A{
+
 }
 class C extends B{
     // super cannot be used to access A class members
-    int nonPrivateMember = 1008; 
+    int nonPrivateMember = 1008; // shadowed field
+    void instanceMethod(){
+        out.println("Overridding Impl");
+    }
     void desc(){
         // this upcasting
         out.println(((A)this).nonPrivateMember);
+        // this upcasting cannot access overridden
+        // implementation of method, though it can
+        // access shadowed fields.
+        ((A)this).instanceMethod();
+        // super keyword can access overridden
+        // implementation, but limitation is that
+        // only parent class will be covered in it.
+        // Hence if current class overriddes method
+        // then that method then it doesnt execute,
+        // overridden version executes. Version said
+        // as in hierarchy, class creates new version
+        // of that method,if it overriddes it. So if
+        // in long hierarchy, some deep child uses
+        // super.instanceMethod() then latest version
+        // executes, excluding version defined in that
+        // same deep child class. Here latest version
+        // was of A class, excluding current class version.
+        super.instanceMethod(); // Overridden Impl
     }
 }
