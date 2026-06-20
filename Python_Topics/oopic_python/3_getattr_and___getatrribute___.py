@@ -1,27 +1,38 @@
 """
-The dunder __getattr__ method is called whenever . operator is used
-to access the attribute. If the attribute is property 
+The dunder __getattr__ method of instance is called at
+last in attribute finding mechanism before throwing attribute 
+error hence we can use it create lazily computed attributes 
+similar to properties by overridding it.
 
-The dunder __getattribute__ method bypasses whole
-attribute finding mechanism and is invoked when attribute 
-is accessed using . operator, causes infinite recursion too
-so use with caution
+The dunder __getattribute__ can be overridden to bypass
+entire attribute access mechanism, in order to create proxy classes.
 
-for overridding these methods the signature should remain same as in object class
+super() is used to prevent from infinite recursion.
 """
 from typing import Any
 
-class A:
-    def __getattribute__(self, __name: str) -> Any:
-        print("dunder __getattribute__ bypassed whole mechanism")
-        # return self.__dict__[__name] will cause infinite recursion as it contains . operator to access __dict__
-    
-    @property
-    def description(self):
-        return "Hello world"
-    
-    def __getattr__(self,attr):
-        print("dunder __getattr__ invoked")
-        return self.__dict__[attr]
+class Item:
+    def __init__(self, price: int = 1000):
+        self.price = price
 
-print(A().description) # getter not invoked due to dunder __getattribute__ which has to invoke that getter
+    def __getattr__(self, name: str) -> Any:
+        if name == "amount":
+            return self.price * 1.1
+
+class Proxy:
+    def __getattribute__(self, name: str) -> Any:
+        print(f"Proxy: {name} attribute is being accessed on {self}")
+        return super().__getattribute__(name)
+
+    def __setattr__(self, name:str , value: Any) -> Any:
+        print(f"Proxy: {name} attribute is being set on {self}")
+        super().__setattr__(name, value)
+
+class Cloth(Proxy):    
+    def __init__(self, price: int):
+        self.price = price
+        
+print(Item().amount)
+cloth = Cloth(1000)
+print(cloth.price)
+cloth.price *= 2
