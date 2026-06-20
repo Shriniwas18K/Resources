@@ -11,6 +11,9 @@ descriptors, and they are usually @property,ORM fields.
 descriptors not having __set__,__delete__ are non-data 
 descriptors, and they are usually methods of any kind.
 
+_storage is used to prevent infinite recursion in 
+getattr() and object.__setattr__() methods
+
 How descriptor works by standard conventions:
 
 When class having descriptor attribute is defined
