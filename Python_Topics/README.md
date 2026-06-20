@@ -14,3 +14,7 @@ It was attempt made on 30 Nov to 7 Dec 2025 to understand how OOP works in pytho
 This folder grabs advanced python topics like metaclasses to modern things like namedtuples.
 
 Hereby we plan to go ahead into RAG LLMs ecosystem ahead as its everywhere in market and our branch matches it most.
+
+#### Advanced Python:
+
+It is attempt made during three months Apr, May, Jun 2026. In one sentence we got updated many things in above. We written many new articles and concepts from books, courses.
