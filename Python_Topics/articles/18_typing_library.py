@@ -20,3 +20,8 @@
 #    Named as CA<Name>.
 # 3] Concrete Classes contain logic and implementations. 
 #    Named with CC<Name>.
+
+# this is syntax of making types in Python, this way we predefine
+# or declare types we will use later, making it benificial for 
+# type checkers.
+type OptionalStr = str|None

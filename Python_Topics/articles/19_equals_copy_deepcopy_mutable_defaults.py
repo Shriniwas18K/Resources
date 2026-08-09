@@ -15,7 +15,7 @@ print()
 from copy import deepcopy
 
 l1 = [1,2,[3,4]]
-l2 = l1.copy()
+l2 = l1.copy() # l1[:] does this same shallow copy
 l3 = deepcopy(l1)
 
 l2[2].append(5) # did insert into l1 nested list 
