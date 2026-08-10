@@ -133,6 +133,31 @@ generators terminate, they automatically raise StopIteration. In combination, th
 make it easy to create iterators with no more effort than writing a regular function. Thus 
 they are used in making context managers.
 
+# Clean DFS Iterator made using generators, works well on large graphs
+>>> def dfsIterator(adj_mat,s):
+	    S = [s]
+	    V = set(S)
+	    while S:
+	        curr = S.pop()
+	        for neigh,edge_connects_curr_and_neigh in enumerate(adj_mat[curr]):
+	            if edge_connects_curr_and_neigh and neigh not in V:
+	                # if directed edge to unvisited vertex
+	                S.append(neigh)
+	                V.add(neigh)
+	        yield curr
+>>> G = [
+    [0,1,1,1],
+    [1,0,1,1],
+    [1,1,0,1],
+    [1,1,1,0]
+]
+>>> for node in dfsIterator(G,0):
+    	print(node)  
+0
+3
+2
+1
+
 Generator Expressions
 Some simple generators can be coded succinctly as expressions using a syntax similar to list 
 comprehensions but with parentheses instead of square brackets. These expressions are designed 
