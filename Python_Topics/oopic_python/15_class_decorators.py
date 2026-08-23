@@ -1,8 +1,6 @@
 """
-these are class creation utility, and used to add specific behavior to classes like
-adding methods to the class without actually extending it, validating attributes or
-class structure. Everything that we do after class creation but before creating any
-instance that can be done using class decorators.
+these are class creation utility
+
 suupose we only allow single class for some purpose in registry
 """
 registry={}
@@ -35,6 +33,7 @@ class YAMLSerializer:
 class JSONSerializer2:
     purpose = 'JSON'
 
+
 # suppose we want to add dynamically __repr__ to created class then we use class decorators.
 def add_repr(cls):
     if '__repr__' not in cls.__dict__:
@@ -49,15 +48,3 @@ class Person:
         self.name=name
         self.age=age
 print(f"{Person(name='Shri',age=21)!r}") # <Person object: {'name':'Shri','age':21}>
-    
-# decorators are basically used for wrapping functions, similar to context manager but rather widely used design pattern
-def decorator_function(decorated_function):
-    def wrapper_function():
-        print("Before executing decorated function")
-        decorated_function()
-        print("After executing decorated function")
-    return wrapper_function
-
-@decorator_function
-def temp():
-    print("Inside the actual function")

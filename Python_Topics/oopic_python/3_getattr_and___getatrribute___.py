@@ -6,8 +6,6 @@ similar to properties by overridding it.
 
 The dunder __getattribute__ can be overridden to bypass
 entire attribute access mechanism, in order to create proxy classes.
-
-super() is used to prevent from infinite recursion.
 """
 from typing import Any
 

@@ -1,10 +1,17 @@
-# for some logics we have long if-else,case-label ladders which are
-# tightly coupled code. Instead we can use dispatch pattern.
-# Also said as command pattern.
+# for some logics we have long if-else,case-label ladders which 
+# are tightly coupled code. Instead we can use Command Pattern.
 # To make any change, it affects other surrounding code.
 # Consider example of task executor and classic way.
 # Command Pattern allows to change commands and their
 # operations in loosely coupled manner.
+
+# Many people say Command Pattern is same as Dispatch
+# Pattern but its not, Dispatch Pattern involves same
+# operation on diffirent kinds of entities. Command 
+# Pattern involves many operations using same entity.
+# In other words only Dispatch Pattern can acheive
+# function overloading and has builtin support using
+# functools module singledispatch,singlemethoddispatch.
 
 from typing import Callable,Self,Any,List
 
@@ -24,13 +31,18 @@ executor = None
 if command == "configure":
     attr,value = input("Enter attribute,value:")
     Executor.configure(attr,value)
-elif command == "build":    executor = Executor.build()
+elif command == "build":
+    executor = Executor.build()
+    
 match command:
-    case "submit":   status = executor.submit(print,"hello","world")
-    case "execute":  status = executor.execute()
-    case "shutdown": status = executor.shutdown()
+    case "submit":
+        status = executor.submit(print,"hello","world")
+    case "execute":
+        status = executor.execute()
+    case "shutdown":
+        status = executor.shutdown()
 
-# command|dispatch pattern
+# command
 
 registry = {
     # command : operation pairs

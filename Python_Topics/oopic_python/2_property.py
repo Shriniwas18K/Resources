@@ -2,7 +2,6 @@
 properties are used for computed attributes and getter setter
 1) amount is computed property below everytime someone tries to access it
 2) private member is property below that is added only when someone sets it,else not found
-In case property or its getter doesnt exist then __getattr__ is invoked.
 """
 class Item:
 
@@ -31,13 +30,7 @@ class Item:
         print("validated value")
         self._private_member = val
 
-    def __getattr__(self,attr):
-        print("dunder __getattr__ invoked")
-        return self.__dict__[attr]
-
 item = Item()
 #print(item.private_optional_member) # gives error not found
 item.private_optional_member = "description optional"
 print(item.private_optional_member)
-print(item.amount)
-print(item.unknown_property)
