@@ -15,9 +15,17 @@
 # i.e. can be assigned only once using ReadOnly
 
 # Note: 
-# 1_) This will be enforced only type checker at compilation, not at runtime.
-# 2_) TypedDicts cannot be inherited or extended hence increases code length
-# 3_) we cannot do CRUD breaking the schema of the TypedDict.
+# 1_) This will be enforced only type checker at 
+#     compilation, not at runtime.
+# 2_) TypedDicts cannot be inherited or extended 
+#     hence increases code length
+# 3_) we cannot do CRUD breaking the schema of the
+#     TypedDict.
+
+# Another useful thing is concept of dict views in
+# normal dictionaries. .keys(),.values(),.items()
+# actually return view of dictionary, which is 
+# actually reflects changes in actual dictionary.
 
 from typing import TypedDict,Required,NotRequired
 from typing_extensions import ReadOnly
@@ -49,3 +57,21 @@ class User3(TypedDict,total=False):
 
 user3 :User3= {"sid":1}
 # user3["sid"] = 10 errors by type checker
+
+d :dict[int,str] = {
+    1 : "hello",
+    2 : "world"
+}
+
+keyview = d.keys()
+print(keyview)
+
+valueview = d.values()
+print(valueview)
+
+itemsview = d.items()
+print(itemsview)
+
+d[4] = "bonjour"
+del d[2]
+print(itemsview,keyview,valueview,sep="\n")
